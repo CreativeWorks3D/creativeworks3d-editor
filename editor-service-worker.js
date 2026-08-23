@@ -5,7 +5,8 @@
 
 const CACHE_NAME = 'cw3d-editor-v2';
 const APP_SHELL = [
-  './catalog-editor.html',
+  './',
+  './index.html',
   './editor-manifest.json',
   './editor-icon-192.png',
   './editor-icon-512.png'
@@ -40,6 +41,6 @@ self.addEventListener('fetch', event => {
         caches.open(CACHE_NAME).then(cache => cache.put(req, resClone));
         return res;
       })
-      .catch(() => caches.match(req).then(cached => cached || caches.match('./catalog-editor.html')))
+      .catch(() => caches.match(req).then(cached => cached || caches.match('./index.html')))
   );
 });
